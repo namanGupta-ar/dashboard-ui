@@ -11,8 +11,12 @@ export default {
           300: '#7D7D7E',
           400: '#919191',
           500: '#FAFAFA',
+          600: '#F8F8F8',
         },
         primary: '#027056',
+        custom: {
+          100: '#309E96',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',

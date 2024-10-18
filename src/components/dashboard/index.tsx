@@ -6,9 +6,9 @@ import NavigationBar from '../navigation';
 
 const Dashboard = () => {
   return (
-    <div className="w-full flex flex-col border rounded-xl m-5">
+    <div className="flex flex-col border rounded-xl m-5">
       <NavigationBar />
-      <div className="flex flex-col gap-9 p-6 border-t">
+      <div className="flex flex-col gap-9 p-6 border-t bg-grey-500 ">
         <Banner />
         <Store />
         <DcluttrPixel />

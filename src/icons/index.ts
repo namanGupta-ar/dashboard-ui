@@ -18,3 +18,10 @@ export { default as FloppyDisc } from './FloppyDisc';
 export { default as Plus } from './Plus';
 export { default as Monitor } from './Monitor';
 export { default as Home } from './Home';
+export { default as StoreIcon } from './StoreIcon';
+export { default as UpDown } from './UpDown';
+export { default as DoubleLeft } from './DoubleLeft';
+export { default as Monitor2 } from './Monitor2';
+export { default as StorageBox } from './StorageBox';
+export { default as ImagesIcon } from './ImagesIcon';
+

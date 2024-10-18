@@ -5,9 +5,11 @@ import Sidebar from './components/side-bar';
 function App() {
   return (
     <>
-      <div className='flex'>
+      <div className='flex h-screen'>
         <Sidebar />
-        <Dashboard />
+        <div className='h-full overflow-y-scroll'>
+          <Dashboard />
+        </div>
       </div>
     </>
   );
