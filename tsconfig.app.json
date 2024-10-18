@@ -24,7 +24,11 @@
     "declarationDir": "types",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["./types"]
+    "typeRoots": ["./types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   // "include": ["src"]
   "include": [

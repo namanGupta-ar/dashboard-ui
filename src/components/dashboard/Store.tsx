@@ -24,6 +24,7 @@ import {
 } from 'recharts';
 
 import { RoasGraphData } from '../temp';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const getItems = (count: number) =>
   Array.from({ length: count }, (v, k) => ({
@@ -72,7 +73,7 @@ const Store = () => {
     <div className="flex flex-col justify-between border border-gray-200 rounded-lg shadow-lg w-full bg-white">
       <div className="flex justify-between items-center border-b p-3">
         <div className="flex items-center gap-2 text-grey-200 text-sm">
-          <span className="h-4 w-4 border"></span>
+          <Checkbox />
           ROAS
         </div>
         <div className="flex items-center gap-2">
@@ -81,25 +82,25 @@ const Store = () => {
           <NineDots width={16} />
         </div>
       </div>
-      <ResponsiveContainer height={200} className="w-full">
+      <ResponsiveContainer height={200} className="w-full p-3">
         <LineChart
           data={RoasGraphData}
           margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <CartesianGrid strokeDasharray="2 2" />
+          <XAxis dataKey="name" tickLine={false} style={{ fontSize: '10px' }} />
           <YAxis tickFormatter={(value) => `$${value}M`} />
           <Tooltip formatter={(value: number) => [`$${value}M`, 'ROAS']} />
-          <Legend />
+          <Tooltip />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="thisMonth"
             stroke="#22c55e"
             strokeWidth={2}
             dot={false}
           />
           <Line
-            type="monotone"
+            type="linear"
             dataKey="lastMonth"
             stroke="#f97316"
             strokeDasharray="3 3"
@@ -128,33 +129,34 @@ const Store = () => {
         subTitle="Find all the analytics for store"
         actions={actions}
       />
-
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="droppable" direction="horizontal">
-          {(provided: DroppableProvided) => (
-            <div
-              className="grid grid-cols-3 gap-4"
-              ref={provided.innerRef}
-              {...provided.droppableProps}
-            >
-              {data.map((item, index) => (
-                <Draggable key={item.id} draggableId={item.id} index={index}>
-                  {(provided: DraggableProvided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <ROASChartCard />
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <div className="mt-6">
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="droppable" direction="horizontal">
+            {(provided: DroppableProvided) => (
+              <div
+                className="grid grid-cols-3 gap-4"
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                {data.map((item, index) => (
+                  <Draggable key={item.id} draggableId={item.id} index={index}>
+                    {(provided: DraggableProvided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                      >
+                        <ROASChartCard />
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      </div>
     </div>
   );
 };
