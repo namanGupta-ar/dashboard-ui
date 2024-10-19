@@ -7,6 +7,7 @@ import {
   Meta,
   Plus,
   ProjectorScreen,
+  RightArrow,
 } from '@/icons';
 import { Monitor } from 'lucide-react';
 
@@ -56,18 +57,28 @@ const SectionNavigator = () => {
   };
   return (
     <div className="flex items-center justify-between py-3 px-4 border-t">
-      <div className="flex gap-[1px] flex-row flex-nowrap p-1 rounded-xl border bg-grey-500 max-w-[50%] overflow-x-scroll whitespace-nowrap scrollbar-none">
-        {Sections.map((section, index) => (
-          <ActionButton
-            handleClick={() => handleClick(index)}
-            key={index}
-            leftIcon={section.icon}
-            text={section.text}
-            className={`border-none cursor-pointer ${
-              index === selectedIndex ? 'bg-primary text-white' : ''
-            }`}
-          />
-        ))}
+      <div className="relative max-w-[50%]">
+        <div className="flex gap-[1px] flex-row flex-nowrap p-1 rounded-xl border bg-grey-500 overflow-x-scroll whitespace-nowrap scrollbar-none">
+          {Sections.map((section, index) => (
+            <ActionButton
+              handleClick={() => handleClick(index)}
+              key={index}
+              leftIcon={section.icon}
+              text={section.text}
+              className={`border-none cursor-pointer ${
+                index === selectedIndex ? 'bg-primary text-white' : ''
+              }`}
+            />
+          ))}
+          <div className="absolute top-3 right-2 z-10 border flex bg-white rounded-md pointer-events-none">
+            <span className="rotate-180 p-1">
+              <RightArrow width={12} />
+            </span>
+            <span className="p-1 border-l">
+              <RightArrow width={12} />
+            </span>
+          </div>
+        </div>
       </div>
       <div className="flex gap-4">
         <ActionButton

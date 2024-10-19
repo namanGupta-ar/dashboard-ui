@@ -4,6 +4,7 @@ export { default as DownArrow2 } from './DownArrow2';
 export { default as Columns } from './Columns';
 export { default as Help } from './Help';
 export { default as Send } from './Send';
+export { default as Settings } from './Settings';
 export { default as Pin } from './Pin';
 export { default as NineDots } from './NineDots';
 export { default as RightArrow } from './RightArrow';
@@ -24,4 +25,6 @@ export { default as DoubleLeft } from './DoubleLeft';
 export { default as Monitor2 } from './Monitor2';
 export { default as StorageBox } from './StorageBox';
 export { default as ImagesIcon } from './ImagesIcon';
+export { default as User } from './User';
+export { default as Share } from './Share';
 

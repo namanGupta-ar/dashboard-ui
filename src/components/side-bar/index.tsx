@@ -1,11 +1,14 @@
 import {
   DoubleLeft,
+  Help,
   Home,
   ImagesIcon,
   Monitor2,
   Plus,
+  Settings,
   StorageBox,
   UpDown,
+  User,
 } from '@/icons';
 import React from 'react';
 
@@ -37,23 +40,42 @@ const Sidebar = () => {
         <DoubleLeft width={16} />
       </div>
       <div className="flex h-full">
-        <div className="flex flex-col py-6 gap-4 mx-[5px]">
-          <ImgWrapper path="images/Brand1.png" />
-          <ImgWrapper path="images/Brand2.png" />
-          <ImgWrapper path="images/Brand3.png" />
-          <div className="flex items-center justify-center h-10 w-10 border rounded-xl text-primary">
-            <Plus width={20} />
+        <div className="flex flex-col justify-between items-center">
+          <div className="flex flex-col py-6 gap-4 mx-[5px]">
+            <ImgWrapper path="images/Brand1.png" />
+            <ImgWrapper path="images/Brand2.png" />
+            <ImgWrapper path="images/Brand3.png" />
+            <div className="flex items-center justify-center h-10 w-10 border rounded-xl text-primary">
+              <Plus width={20} />
+            </div>
+          </div>
+          <div className="flex flex-col gap-[18px] items-center mb-10">
+            <User width={20} />
+            <p className="h-7 w-7 bg-custom-200 text-white rounded-full text-center text-xs font-semibold pt-[6px]">
+              SS
+            </p>
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 bg-gray-100 py-9 px-4">
-          <OptionsWrapper
-            className="bg-primary text-primary bg-opacity-10"
-            icon={<Home width={20} />}
-          />
-          <OptionsWrapper icon={<Monitor2 width={20} />} />
-          <OptionsWrapper icon={<StorageBox width={20} />} />
-          <OptionsWrapper icon={<ImagesIcon width={20} />} />
+        <div className="flex flex-col justify-between items-center bg-gray-100 py-9 px-4">
+          <div className="flex flex-col gap-2 ">
+            <OptionsWrapper
+              className="bg-primary text-primary bg-opacity-10"
+              icon={<Home width={20} />}
+            />
+            <OptionsWrapper icon={<Monitor2 width={20} />} />
+            <OptionsWrapper icon={<StorageBox width={20} />} />
+            <OptionsWrapper icon={<ImagesIcon width={20} />} />
+          </div>
+
+          <div className="text-grey-700">
+            <p className='p-2 mb-[10px]'>
+              <Help width={20} />
+            </p>
+            <p className='p-2'>
+              <Settings width={20} />
+            </p>
+          </div>
         </div>
       </div>
     </div>
