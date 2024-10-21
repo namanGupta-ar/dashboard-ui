@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Heading from './Heading';
 import ActionButton from '../common/ActionButton';
-import { DownArrow, DownArrow2, Edit, Help, NineDots, Pin, Share } from '../../icons';
+import { DownArrow2, Edit, Help, NineDots, Pin, Share } from '../../icons';
 import {
   DragDropContext,
   Droppable,
   Draggable,
   DropResult,
   DraggableProvided,
-  DraggableStateSnapshot,
   DroppableProvided,
-  DroppableStateSnapshot,
 } from 'react-beautiful-dnd';
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   AreaChart,
   Area,
@@ -29,7 +24,7 @@ import { RoasGraphData } from '../temp';
 import { Checkbox } from '@/components/ui/checkbox';
 
 const getItems = (count: number) =>
-  Array.from({ length: count }, (v, k) => ({
+  Array.from({ length: count }, (_, k) => ({
     id: `item-${k}`,
     content: `item ${k}`,
   }));
@@ -70,25 +65,6 @@ const Store = () => {
     const items = reorder(data, result.source.index, result.destination.index);
     setData(items);
   };
-
-  const sales = [
-    { name: 'Jan', product1: 4000, product2: 2400 },
-    {
-      name: 'Feb',
-      product1: 3000,
-      product2: 2210,
-    },
-    {
-      name: 'Mar',
-      product1: 2000,
-      product2: 2290,
-    },
-    {
-      name: 'Apr',
-      product1: 2780,
-      product2: 2000,
-    },
-  ];
 
   const ROASChartCard = ({ title, checkbox = false, options = false }: any) => (
     <div className="flex flex-col justify-between border border-gray-200 rounded-lg shadow-lg w-full bg-white">

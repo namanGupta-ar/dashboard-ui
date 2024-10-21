@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ActionButton from '../common/ActionButton';
 import Heading from './Heading';
 import {
   Columns,
   DownArrow,
   DownArrow2,
-  Edit,
   GoogleAds,
   Meta,
   ProjectorScreen,

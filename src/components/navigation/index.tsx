@@ -1,4 +1,3 @@
-import React from 'react';
 import FilterActionsBar from './FilterActionsBar';
 import SectionNavigator from './SectionNavigator';
 

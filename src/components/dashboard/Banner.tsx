@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react';
-import shopify from '../../assets/images/shopify.png';
+import { ReactNode } from 'react';
 import Cross from '../../icons/Cross';
 import { FloppyDisc, GoogleAds, Meta } from '@/icons';
 

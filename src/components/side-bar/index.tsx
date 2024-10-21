@@ -10,7 +10,6 @@ import {
   UpDown,
   User,
 } from '@/icons';
-import React from 'react';
 
 const Sidebar = () => {
   const ImgWrapper = ({ path }: any) => {
